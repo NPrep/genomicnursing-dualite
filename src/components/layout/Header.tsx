@@ -1,0 +1,134 @@
+import React, { useState } from 'react';
+import { Menu, X, Phone, MapPin } from 'lucide-react';
+import { NAV_LINKS } from '../../constants';
+import { Button } from '../ui/Button';
+import { Link, useLocation } from 'react-router-dom';
+
+export const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
+
+  return (
+    <header className="sticky top-0 z-50 w-full bg-white shadow-sm border-b border-border">
+      {/* Top Bar */}
+      <div className="bg-primary text-white py-2 text-xs sm:text-sm hidden md:block">
+        <div className="container mx-auto px-4 flex justify-between items-center">
+          <div className="flex items-center space-x-6">
+            <span className="flex items-center gap-2">
+              <Phone className="w-4 h-4 text-accent" />
+              +91 6377 6391 69
+            </span>
+            <span className="flex items-center gap-2">
+              <MapPin className="w-4 h-4 text-accent" />
+              Gopalpura Bypass, Jaipur, Rajasthan
+            </span>
+          </div>
+          <div className="font-medium text-accent">
+            Trusted by 5000+ Nursing Students
+          </div>
+        </div>
+      </div>
+
+      {/* Main Nav */}
+      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+        {/* Logo Area */}
+        <Link to="/" className="flex items-center gap-3">
+          <img 
+            src="https://images.dualite.app/de7c7353-5b72-41c6-a07c-4a725f050847/Screenshot_2026-01-30_at_6.05.31_PM-0b09cf49-d7a0-45e8-b2fc-7e980acb91c2.webp"
+            alt="Genomic Medical Academy"
+            className="w-12 h-12 object-contain rounded-full border-2 border-accent bg-white"
+          />
+          <div className="flex flex-col">
+            <h1 className="text-xl font-bold text-primary leading-none">GENOMIC</h1>
+            <span className="text-xs text-secondary font-semibold tracking-wider">MEDICAL ACADEMY</span>
+          </div>
+        </Link>
+
+        {/* Desktop Nav */}
+        <nav className="hidden lg:flex items-center gap-8">
+          {NAV_LINKS.map((link) => {
+             const isHash = link.href.includes('#');
+             const isActive = location.pathname === link.href;
+             
+             if (isHash) {
+               return (
+                 <a 
+                   key={link.label} 
+                   href={link.href}
+                   className="text-text-primary font-medium hover:text-primary transition-colors text-sm uppercase tracking-wide"
+                 >
+                   {link.label}
+                 </a>
+               );
+             }
+
+             return (
+              <Link
+                key={link.label} 
+                to={link.href}
+                className={`font-medium transition-colors text-sm uppercase tracking-wide ${isActive ? 'text-primary font-bold' : 'text-text-primary hover:text-primary'}`}
+              >
+                {link.label}
+              </Link>
+             );
+          })}
+        </nav>
+
+        {/* CTA Button */}
+        <div className="hidden lg:block">
+          <a href="https://nprep.in/login" target="_blank" rel="noopener noreferrer">
+            <Button variant="accent" className="font-bold shadow-md">
+              Admission Open
+            </Button>
+          </a>
+        </div>
+
+        {/* Mobile Menu Toggle */}
+        <button 
+          className="lg:hidden p-2 text-text-primary"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+        >
+          {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-border absolute w-full shadow-lg">
+          <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
+            {NAV_LINKS.map((link) => {
+               const isHash = link.href.includes('#');
+               if (isHash) {
+                 return (
+                  <a 
+                    key={link.label} 
+                    href={link.href}
+                    className="text-text-primary font-medium py-2 border-b border-gray-100 hover:text-primary"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                 );
+               }
+               return (
+                <Link 
+                  key={link.label} 
+                  to={link.href}
+                  className="text-text-primary font-medium py-2 border-b border-gray-100 hover:text-primary"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  {link.label}
+                </Link>
+               );
+            })}
+            <a href="https://nprep.in/login" target="_blank" rel="noopener noreferrer" className="w-full">
+              <Button variant="primary" className="w-full mt-2">
+                Enroll Now
+              </Button>
+            </a>
+          </div>
+        </div>
+      )}
+    </header>
+  );
+};
