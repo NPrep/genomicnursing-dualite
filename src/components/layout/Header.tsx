@@ -23,24 +23,27 @@ export const Header = () => {
               Gopalpura Bypass, Jaipur, Rajasthan
             </span>
           </div>
-          <div className="font-medium text-accent">
-            Trusted by 5000+ Nursing Students
+          <div className="font-medium text-accent tracking-wide">
+            Est. 2015 • Excellence in Nursing Education
           </div>
         </div>
       </div>
 
       {/* Main Nav */}
-      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
+      <div className="container mx-auto px-4 h-24 flex items-center justify-between">
         {/* Logo Area */}
-        <Link to="/" className="flex items-center gap-3">
+        <Link to="/" className="flex items-center gap-3 group">
           <img 
             src="https://images.dualite.app/de7c7353-5b72-41c6-a07c-4a725f050847/Screenshot_2026-01-30_at_6.05.31_PM-0b09cf49-d7a0-45e8-b2fc-7e980acb91c2.webp"
             alt="Genomic Medical Academy"
-            className="w-12 h-12 object-contain rounded-full border-2 border-accent bg-white"
+            className="w-14 h-14 object-contain rounded-full border-2 border-accent bg-white group-hover:shadow-md transition-all"
           />
           <div className="flex flex-col">
-            <h1 className="text-xl font-bold text-primary leading-none">GENOMIC</h1>
-            <span className="text-xs text-secondary font-semibold tracking-wider">MEDICAL ACADEMY</span>
+            <h1 className="text-xl font-bold text-primary leading-none tracking-tight">GENOMIC</h1>
+            <span className="text-xs text-secondary font-bold tracking-widest mb-0.5">MEDICAL ACADEMY</span>
+            <span className="text-[10px] text-text-secondary uppercase tracking-wider border-t border-gray-200 pt-0.5 mt-0.5">
+              Independent Institution
+            </span>
           </div>
         </Link>
 
@@ -77,8 +80,8 @@ export const Header = () => {
         {/* CTA Button */}
         <div className="hidden lg:block">
           <a href="https://nprep.in/login" target="_blank" rel="noopener noreferrer">
-            <Button variant="accent" className="font-bold shadow-md">
-              Admission Open
+            <Button variant="accent" className="font-bold shadow-sm hover:shadow-md">
+              Student Login
             </Button>
           </a>
         </div>
@@ -123,7 +126,7 @@ export const Header = () => {
             })}
             <a href="https://nprep.in/login" target="_blank" rel="noopener noreferrer" className="w-full">
               <Button variant="primary" className="w-full mt-2">
-                Enroll Now
+                Student Portal
               </Button>
             </a>
           </div>

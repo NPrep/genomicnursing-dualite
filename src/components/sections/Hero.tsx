@@ -1,10 +1,11 @@
 import React from 'react';
 import { Button } from '../ui/Button';
 import { motion } from 'framer-motion';
+import { BookOpen, Users, Award } from 'lucide-react';
 
 export const Hero = () => {
   return (
-    <section className="relative bg-primary overflow-hidden min-h-[85vh] flex items-center justify-center">
+    <section className="relative bg-primary overflow-hidden min-h-[80vh] flex items-center justify-center">
       {/* Background Image with Brand Color Overlay */}
       <div className="absolute inset-0 z-0">
         <img 
@@ -27,47 +28,49 @@ export const Hero = () => {
             transition={{ duration: 0.6 }}
             className="max-w-4xl mx-auto"
           >
-            <div className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6 shadow-sm">
-              <span className="text-accent font-bold text-sm tracking-wide uppercase">
-                #1 Nursing Coaching in Jaipur
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 mb-6 shadow-sm">
+              <Award className="w-4 h-4 text-accent" />
+              <span className="text-white font-medium text-sm tracking-wide">
+                Excellence in Medical Education
               </span>
             </div>
             
-            <h1 className="text-4xl lg:text-7xl font-bold text-white leading-tight mb-6">
+            <h1 className="text-4xl lg:text-6xl font-bold text-white leading-tight mb-6">
               Genomic Medical & <br />
               <span className="text-accent">Nursing Academy</span>
             </h1>
             
             <p className="text-lg md:text-xl text-blue-100 mb-10 leading-relaxed font-medium max-w-2xl mx-auto">
-              Trusted coaching for <span className="text-white font-bold">Nursing Officer</span> & <span className="text-white font-bold">Medical Competitive Exams</span>. 
-              Join the league of successful nursing professionals serving across India.
+              An independent institution committed to shaping the future of nursing professionals. 
+              Comprehensive preparation for <span className="text-white">NORCET</span>, <span className="text-white">RRB</span>, and <span className="text-white">State Exams</span>.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a href="https://nprep.in/login" target="_blank" rel="noopener noreferrer">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+              <a href="#courses">
                 <Button size="lg" variant="accent" className="shadow-lg shadow-black/20 text-primary font-bold px-10 w-full sm:w-auto">
-                  Enroll Now
+                  Explore Courses
                 </Button>
               </a>
-              <a href="tel:+916377639169">
+              <a href="#contact">
                 <Button variant="outline" size="lg" className="border-white text-white hover:bg-white hover:text-primary font-bold px-10 w-full sm:w-auto">
-                  Contact Us
+                  Contact Counselling
                 </Button>
               </a>
             </div>
 
-            <div className="mt-12 flex flex-wrap justify-center items-center gap-6 md:gap-10 text-sm font-semibold text-blue-100">
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-accent"></div>
-                Offline Classes
+            {/* Stats */}
+            <div className="flex flex-wrap justify-center gap-8 md:gap-16 border-t border-white/10 pt-8">
+              <div className="flex flex-col items-center">
+                <span className="text-3xl font-bold text-white">500+</span>
+                <span className="text-sm text-blue-200 uppercase tracking-wider mt-1">Selections</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-accent"></div>
-                Online App
+              <div className="flex flex-col items-center">
+                <span className="text-3xl font-bold text-white">10+</span>
+                <span className="text-sm text-blue-200 uppercase tracking-wider mt-1">Years Experience</span>
               </div>
-              <div className="flex items-center gap-2">
-                <div className="w-2 h-2 rounded-full bg-accent"></div>
-                Test Series
+              <div className="flex flex-col items-center">
+                <span className="text-3xl font-bold text-white">Offline</span>
+                <span className="text-sm text-blue-200 uppercase tracking-wider mt-1">& Online Classes</span>
               </div>
             </div>
           </motion.div>

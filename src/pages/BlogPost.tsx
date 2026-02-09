@@ -13,6 +13,72 @@ export const BlogPost = () => {
     window.scrollTo(0, 0);
   }, [id]);
 
+  // Inject JSON-LD Schema
+  useEffect(() => {
+    if (post) {
+      const schemaData = {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": post.title,
+        "image": "https://images.dualite.app/de7c7353-5b72-41c6-a07c-4a725f050847/Screenshot_2026-01-30_at_6.05.31_PM-0b09cf49-d7a0-45e8-b2fc-7e980acb91c2.webp",
+        "author": {
+          "@type": "Organization",
+          "name": post.author
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "Genomic Medical Academy",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://images.dualite.app/de7c7353-5b72-41c6-a07c-4a725f050847/Screenshot_2026-01-30_at_6.05.31_PM-0b09cf49-d7a0-45e8-b2fc-7e980acb91c2.webp"
+          }
+        },
+        "datePublished": post.date,
+        "description": post.excerpt
+      };
+
+      // Extract FAQs if they exist in content for FAQPage schema (Simplified extraction)
+      // For a robust solution, we'd parse the HTML, but here we'll add a generic FAQ schema if "FAQs" is in title or content
+      const faqSchema = {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Is coaching necessary for Nursing Exams?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "While self-study is possible, coaching provides structured guidance, mock tests, and expert mentorship which significantly improves chances of selection."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What is the eligibility for NORCET?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "B.Sc Nursing candidates are eligible as freshers. GNM candidates require 2 years of experience in a 50-bedded hospital."
+            }
+          }
+        ]
+      };
+
+      const scriptArticle = document.createElement('script');
+      scriptArticle.type = 'application/ld+json';
+      scriptArticle.text = JSON.stringify(schemaData);
+      document.head.appendChild(scriptArticle);
+
+      const scriptFAQ = document.createElement('script');
+      scriptFAQ.type = 'application/ld+json';
+      scriptFAQ.text = JSON.stringify(faqSchema);
+      document.head.appendChild(scriptFAQ);
+
+      return () => {
+        document.head.removeChild(scriptArticle);
+        document.head.removeChild(scriptFAQ);
+      };
+    }
+  }, [post]);
+
   if (!post) {
     return (
       <div className="min-h-screen flex flex-col items-center justify-center bg-surface p-4">
@@ -68,7 +134,7 @@ export const BlogPost = () => {
           <div>
             <h3 className="text-lg font-bold text-text-primary mb-2">About Genomic Academy</h3>
             <p className="text-text-secondary text-sm leading-relaxed">
-              Genomic Medical & Nursing Academy is Jaipur's leading coaching institute for nursing competitive exams. We are dedicated to providing high-quality education and mentorship to aspiring nursing officers.
+              Genomic Medical & Nursing Academy is an independent institute in Jaipur dedicated to nursing education. We provide objective guidance and comprehensive resources for competitive exams.
             </p>
           </div>
         </div>
