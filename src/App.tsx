@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import { Header } from './components/layout/Header';
 import { Footer } from './components/layout/Footer';
 import { Home } from './pages/Home';
@@ -9,10 +9,15 @@ import { PYQ } from './pages/PYQ';
 import { SubjectTests } from './pages/SubjectTests';
 import { MockTests } from './pages/MockTests';
 import { ScrollToTop } from './components/ui/ScrollToTop';
+import { RouterWrapper } from './next/RouterWrapper';
 
-function App() {
+type AppProps = {
+  initialPath?: string;
+};
+
+function App({ initialPath = '/' }: AppProps) {
   return (
-    <Router>
+    <RouterWrapper initialPath={initialPath}>
       <ScrollToTop />
       <div className="min-h-screen bg-white font-sans text-text-primary antialiased flex flex-col">
         <Header />
@@ -26,7 +31,7 @@ function App() {
         </Routes>
         <Footer />
       </div>
-    </Router>
+    </RouterWrapper>
   );
 }
 
