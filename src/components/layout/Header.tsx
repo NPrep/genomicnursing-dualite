@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Menu, X, Phone, MapPin } from 'lucide-react';
+import { Menu, X, Phone, MapPin, Dna } from 'lucide-react';
 import { NAV_LINKS } from '../../constants';
 import { Button } from '../ui/Button';
 import { Link, useLocation } from 'react-router-dom';
@@ -33,11 +33,9 @@ export const Header = () => {
       <div className="container mx-auto px-4 h-24 flex items-center justify-between">
         {/* Logo Area */}
         <Link to="/" className="flex items-center gap-3 group">
-          <img 
-            src="https://images.dualite.app/de7c7353-5b72-41c6-a07c-4a725f050847/Screenshot_2026-01-30_at_6.05.31_PM-0b09cf49-d7a0-45e8-b2fc-7e980acb91c2.webp"
-            alt="Genomic Medical Academy"
-            className="w-14 h-14 object-contain rounded-full border-2 border-accent bg-white group-hover:shadow-md transition-all"
-          />
+          <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center border-2 border-accent group-hover:shadow-md transition-all">
+            <Dna className="w-8 h-8 text-white" />
+          </div>
           <div className="flex flex-col">
             <h1 className="text-xl font-bold text-primary leading-none tracking-tight">GENOMIC</h1>
             <span className="text-xs text-secondary font-bold tracking-widest mb-0.5">MEDICAL ACADEMY</span>

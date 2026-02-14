@@ -1,5 +1,5 @@
 import React from 'react';
-import { Phone, Instagram, Youtube, CheckCircle2, MapPin } from 'lucide-react';
+import { Phone, Instagram, Youtube, CheckCircle2, MapPin, Dna } from 'lucide-react';
 
 export const Footer = () => {
   const exams = [
@@ -15,11 +15,9 @@ export const Footer = () => {
           {/* Brand Info */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <img 
-                src="https://images.dualite.app/de7c7353-5b72-41c6-a07c-4a725f050847/Screenshot_2026-01-30_at_6.05.31_PM-0b09cf49-d7a0-45e8-b2fc-7e980acb91c2.webp"
-                alt="Genomic Medical Academy"
-                className="w-12 h-12 object-contain rounded-full border-2 border-accent bg-white"
-              />
+              <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center border-2 border-accent">
+                <Dna className="w-6 h-6 text-white" />
+              </div>
               <div className="flex flex-col">
                 <h3 className="text-lg font-bold text-white leading-none">GENOMIC</h3>
                 <span className="text-[10px] text-accent font-semibold tracking-wider">MEDICAL ACADEMY</span>

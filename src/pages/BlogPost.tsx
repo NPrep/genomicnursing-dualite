@@ -20,7 +20,7 @@ export const BlogPost = () => {
         "@context": "https://schema.org",
         "@type": "Article",
         "headline": post.title,
-        "image": "https://images.dualite.app/de7c7353-5b72-41c6-a07c-4a725f050847/Screenshot_2026-01-30_at_6.05.31_PM-0b09cf49-d7a0-45e8-b2fc-7e980acb91c2.webp",
+        "image": "https://placehold.co/1200x630/2E3192/FFD200?text=Genomic+Academy",
         "author": {
           "@type": "Organization",
           "name": post.author
@@ -30,7 +30,7 @@ export const BlogPost = () => {
           "name": "Genomic Medical Academy",
           "logo": {
             "@type": "ImageObject",
-            "url": "https://images.dualite.app/de7c7353-5b72-41c6-a07c-4a725f050847/Screenshot_2026-01-30_at_6.05.31_PM-0b09cf49-d7a0-45e8-b2fc-7e980acb91c2.webp"
+            "url": "https://placehold.co/192x192/2E3192/FFD200?text=G"
           }
         },
         "datePublished": post.date,
