@@ -10,6 +10,14 @@ export const Hero = () => {
         <div className="absolute -top-24 -left-24 h-96 w-96 rounded-full bg-accent/20 blur-3xl"></div>
         <div className="absolute bottom-0 right-0 h-[28rem] w-[28rem] rounded-full bg-white/10 blur-3xl"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(255,255,255,0.22),_transparent_55%)]"></div>
+        <img loading="lazy" 
+          src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&q=80&w=2000" 
+          alt="Nursing Classroom Background" 
+          className="w-full h-full object-cover"
+        />
+        {/* Brand color screen with low transparency (high opacity) */}
+        <div className="absolute inset-0 bg-primary/90 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-primary/80"></div>
       </div>
 
       <div className="container mx-auto px-4 py-16 lg:py-24 relative z-10">

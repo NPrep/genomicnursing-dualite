@@ -11,6 +11,9 @@ export const Footer = () => {
   return (
     <footer id="contact" className="bg-primary text-white pt-16 border-t border-white/10">
       <div className="container mx-auto px-4">
+        <div className="nprep-disclaimer-banner">
+          Disclaimer: This is an independent educational portal and not an official government website. In association with NPrep.
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           <div>
             <div className="flex items-center gap-3 mb-6">
@@ -70,7 +73,7 @@ export const Footer = () => {
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-accent shrink-0" />
-                <span className="text-gray-300 text-sm">+91 6377 6391 69</span>
+                <a href="tel:+916377639169" className="text-gray-300 text-sm hover:text-accent transition-colors">+91 6377 6391 69</a>
               </li>
             </ul>
           </div>
@@ -80,6 +83,10 @@ export const Footer = () => {
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
             <p className="text-gray-400 text-sm">© {new Date().getFullYear()} Genomic Medical & Nursing Academy. All Rights Reserved.</p>
             <p className="text-gray-500 text-xs">Jaipur's Trusted Nursing Institute</p>
+            <p className="text-gray-400 text-sm">
+              © {new Date().getFullYear()} Genomic Medical & Nursing Academy. All Rights Reserved.
+            </p>
+            <p className="text-gray-500 text-xs">Jaipur's Trusted Nursing Institute. In association with NPrep.</p>
           </div>
         </div>
       </div>
