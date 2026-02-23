@@ -95,7 +95,7 @@ export const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="lg:hidden bg-white border-t border-border absolute w-full shadow-lg">
+        <div className="lg:hidden nprep-mobile-drawer">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">
             {NAV_LINKS.map((link) => {
                const isHash = link.href.includes('#');
