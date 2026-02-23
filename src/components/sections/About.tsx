@@ -10,12 +10,12 @@ export const About = () => {
           {/* Image Side */}
           <div className="order-2 lg:order-1 relative">
             <div className="grid grid-cols-2 gap-4">
-              <img 
+              <img loading="lazy" 
                 src="https://images.unsplash.com/photo-1519452635265-7b1fbfd1e4e0?auto=format&fit=crop&q=80&w=600" 
                 alt="Medical Institute Building" 
                 className="rounded-lg shadow-md w-full h-64 object-cover"
               />
-              <img 
+              <img loading="lazy" 
                 src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&q=80&w=600" 
                 alt="Faculty Teaching" 
                 className="rounded-lg shadow-md w-full h-64 object-cover mt-8"

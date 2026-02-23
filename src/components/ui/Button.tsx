@@ -6,31 +6,31 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   size?: 'sm' | 'md' | 'lg';
 }
 
-export const Button: React.FC<ButtonProps> = ({ 
-  children, 
-  className, 
-  variant = 'primary', 
-  size = 'md', 
-  ...props 
+export const Button: React.FC<ButtonProps> = ({
+  children,
+  className,
+  variant = 'primary',
+  size = 'md',
+  ...props
 }) => {
-  const baseStyles = "inline-flex items-center justify-center rounded-md font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
-  
+  const baseStyles = "inline-flex min-h-[44px] items-center justify-center rounded-[8px] text-[15px] font-semibold transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[var(--primary)] focus:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none";
+
   const variants = {
-    primary: "bg-primary text-white hover:bg-primary-dark focus:ring-primary",
-    secondary: "bg-secondary text-white hover:bg-blue-700 focus:ring-secondary",
-    accent: "bg-accent text-primary hover:bg-accent-hover focus:ring-accent",
-    outline: "border-2 border-primary text-primary hover:bg-surface focus:ring-primary",
+    primary: "bg-[var(--accent)] text-white hover:bg-[var(--accent-hover)] hover:-translate-y-0.5 hover:shadow-[0_4px_12px_rgba(5,150,105,0.3)]",
+    secondary: "border-[1.5px] border-[var(--primary)] bg-transparent text-[var(--primary)] hover:bg-[var(--primary-light)]",
+    accent: "bg-[var(--accent)] text-white hover:bg-[var(--accent-hover)]",
+    outline: "border-[1.5px] border-[var(--primary)] bg-transparent text-[var(--primary)] hover:bg-[var(--primary-light)]",
   };
 
   const sizes = {
-    sm: "h-9 px-4 text-sm",
-    md: "h-11 px-6 text-base",
-    lg: "h-14 px-8 text-lg",
+    sm: "h-10 px-4 text-sm",
+    md: "h-11 px-6",
+    lg: "h-12 px-6",
   };
 
   return (
-    <button 
-      className={cn(baseStyles, variants[variant], sizes[size], className)} 
+    <button
+      className={cn(baseStyles, variants[variant], sizes[size], className)}
       {...props}
     >
       {children}

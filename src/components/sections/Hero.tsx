@@ -8,7 +8,7 @@ export const Hero = () => {
     <section className="relative bg-primary overflow-hidden min-h-[80vh] flex items-center justify-center">
       {/* Background Image with Brand Color Overlay */}
       <div className="absolute inset-0 z-0">
-        <img 
+        <img loading="lazy" 
           src="https://images.unsplash.com/photo-1571260899304-425eee4c7efc?auto=format&fit=crop&q=80&w=2000" 
           alt="Nursing Classroom Background" 
           className="w-full h-full object-cover"
