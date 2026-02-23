@@ -24,7 +24,7 @@ export const Header = () => {
             </span>
           </div>
           <div className="font-medium text-accent tracking-wide">
-            Est. 2015 • Excellence in Nursing Education
+            Academic partner: NPrep | Online platform powered by NPrep
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@ export const Header = () => {
             <h1 className="text-xl font-bold text-primary leading-none tracking-tight">GENOMIC</h1>
             <span className="text-xs text-secondary font-bold tracking-widest mb-0.5">MEDICAL ACADEMY</span>
             <span className="text-[10px] text-text-secondary uppercase tracking-wider border-t border-gray-200 pt-0.5 mt-0.5">
-              Independent Institution
+              Nursing Coaching Academy, Jaipur
             </span>
           </div>
         </Link>
@@ -127,6 +127,9 @@ export const Header = () => {
                 Student Portal
               </Button>
             </a>
+            <p className="text-[11px] text-text-secondary mt-1">
+              Academic partner: NPrep | Online platform powered by NPrep
+            </p>
           </div>
         </div>
       )}
