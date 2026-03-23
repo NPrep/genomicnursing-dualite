@@ -40,7 +40,7 @@ export const Header = () => {
             <h1 className="text-xl font-bold text-primary leading-none tracking-tight">GENOMIC</h1>
             <span className="text-xs text-secondary font-bold tracking-widest mb-0.5">MEDICAL ACADEMY</span>
             <span className="text-[10px] text-text-secondary uppercase tracking-wider border-t border-gray-200 pt-0.5 mt-0.5">
-              Nursing Coaching Academy, Jaipur
+              Nursing Concepts and Education Hub
             </span>
           </div>
         </Link>
@@ -79,7 +79,7 @@ export const Header = () => {
         <div className="hidden lg:block">
           <a href="https://nprep.in/login" target="_blank" rel="noopener noreferrer">
             <Button variant="accent" className="font-bold shadow-sm hover:shadow-md">
-              Student Login
+              NPrep Practice
             </Button>
           </a>
         </div>
@@ -124,7 +124,7 @@ export const Header = () => {
             })}
             <a href="https://nprep.in/login" target="_blank" rel="noopener noreferrer" className="w-full">
               <Button variant="primary" className="w-full mt-2">
-                Student Portal
+                NPrep Practice
               </Button>
             </a>
             <p className="text-[11px] text-text-secondary mt-1">

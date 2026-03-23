@@ -2,11 +2,10 @@ import { BookOpen, Users, Trophy, ClipboardCheck, Stethoscope, GraduationCap, Za
 
 export const NAV_LINKS = [
   { label: 'Home', href: '/' },
-  { label: 'Courses', href: '/#courses' },
-  { label: 'PYQ', href: '/pyq' },
-  { label: 'Subject Tests', href: '/subject-tests' },
-  { label: 'Mock Tests', href: '/mock-tests' },
-  { label: 'Blog', href: '/blog' },
+  { label: 'Fundamentals', href: '/fundamentals-of-nursing' },
+  { label: 'Procedures', href: '/hand-washing-procedure-who' },
+  { label: 'Concepts', href: '/infection-control-in-nursing' },
+  { label: 'Pharmacology', href: '/pharmacology-in-nursing' },
   { label: 'Contact Us', href: '#contact' },
 ];
 
