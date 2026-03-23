@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Menu, X, Phone, MapPin, Dna } from 'lucide-react';
+import { Menu, X, BookOpen } from 'lucide-react';
 import { NAV_LINKS } from '../../constants';
-import { Button } from '../ui/Button';
 import { Link, useLocation } from 'react-router-dom';
 
 export const Header = () => {
@@ -10,31 +9,10 @@ export const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm border-b border-border">
-      {/* Top Bar */}
-      <div className="bg-primary text-white py-2 text-xs sm:text-sm hidden md:block">
-        <div className="container mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center space-x-6">
-            <span className="flex items-center gap-2">
-              <Phone className="w-4 h-4 text-accent" />
-              +91 6377 6391 69
-            </span>
-            <span className="flex items-center gap-2">
-              <MapPin className="w-4 h-4 text-accent" />
-              Gopalpura Bypass, Jaipur, Rajasthan
-            </span>
-          </div>
-          <div className="font-medium text-accent tracking-wide">
-            Academic partner: NPrep | Online platform powered by NPrep
-          </div>
-        </div>
-      </div>
-
-      {/* Main Nav */}
-      <div className="container mx-auto px-4 h-24 flex items-center justify-between">
-        {/* Logo Area */}
+      <div className="container mx-auto px-4 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="w-14 h-14 rounded-full bg-primary flex items-center justify-center border-2 border-accent group-hover:shadow-md transition-all">
-            <Dna className="w-8 h-8 text-white" />
+          <div className="w-11 h-11 rounded-full bg-primary flex items-center justify-center border border-accent group-hover:shadow-sm transition-all">
+            <BookOpen className="w-5 h-5 text-white" />
           </div>
           <div className="flex flex-col">
             <h1 className="text-xl font-bold text-primary leading-none tracking-tight">GENOMIC</h1>
@@ -45,34 +23,16 @@ export const Header = () => {
           </div>
         </Link>
 
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center gap-8">
-          {NAV_LINKS.map((link) => {
-             const isHash = link.href.includes('#');
-             const isActive = location.pathname === link.href;
-             
-             if (isHash) {
-               return (
-                 <a 
-                   key={link.label} 
-                   href={link.href}
-                   className="text-text-primary font-medium hover:text-primary transition-colors text-sm uppercase tracking-wide"
-                 >
-                   {link.label}
-                 </a>
-               );
-             }
-
-             return (
-              <Link
-                key={link.label} 
-                to={link.href}
-                className={`font-medium transition-colors text-sm uppercase tracking-wide ${isActive ? 'text-primary font-bold' : 'text-text-primary hover:text-primary'}`}
-              >
-                {link.label}
-              </Link>
-             );
-          })}
+        <nav className="hidden lg:flex items-center gap-6">
+          {NAV_LINKS.map((link) => (
+            <Link
+              key={link.label}
+              to={link.href}
+              className={`font-medium transition-colors text-sm uppercase tracking-wide ${location.pathname === link.href ? 'text-primary font-bold' : 'text-text-primary hover:text-primary'}`}
+            >
+              {link.label}
+            </Link>
+          ))}
         </nav>
 
         {/* CTA Button */}
@@ -93,7 +53,6 @@ export const Header = () => {
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="lg:hidden nprep-mobile-drawer">
           <div className="container mx-auto px-4 py-4 flex flex-col gap-4">

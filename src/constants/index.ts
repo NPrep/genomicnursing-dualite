@@ -1,5 +1,3 @@
-import { BookOpen, Users, Trophy, ClipboardCheck, Stethoscope, GraduationCap, Zap, Crown, FileText } from 'lucide-react';
-
 export const NAV_LINKS = [
   { label: 'Home', href: '/' },
   { label: 'Fundamentals', href: '/fundamentals-of-nursing' },
@@ -209,5 +207,12 @@ export const BLOG_POSTS = [
   { id: 9, title: "Scope of M.Sc Nursing in India and Abroad" }
 ];
 
+// Legacy exports retained for compatibility with older components.
+export const COURSES = [];
+export const PYQ_COLLECTIONS = [];
+export const SUBJECT_TESTS = [];
+export const MOCK_TESTS = [];
+export const FEATURES = [];
+export const BLOG_POSTS = [];
 export const RESULTS = [];
 export const GALLERY_IMAGES = [];

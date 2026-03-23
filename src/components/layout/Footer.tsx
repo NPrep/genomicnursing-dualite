@@ -1,5 +1,4 @@
 import React from 'react';
-import { Phone, Instagram, Youtube, CheckCircle2, MapPin, Dna } from 'lucide-react';
 
 export const Footer = () => {
   const knowledgeAreas = [
@@ -9,7 +8,7 @@ export const Footer = () => {
   ];
 
   return (
-    <footer id="contact" className="bg-primary text-white pt-16 border-t border-white/10">
+    <footer className="bg-primary text-white py-10 border-t border-white/10 mt-auto">
       <div className="container mx-auto px-4">
         <div className="nprep-disclaimer-banner">
           Disclaimer: This is an independent educational portal and not an official government website. In association with NPrep.
